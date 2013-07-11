@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using NBTExplorer.Model;
+using Taggy.Model;
 
-namespace NBTExplorer
+namespace Taggy
 {
     internal interface ISearchState
     {

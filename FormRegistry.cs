@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Substrate.Nbt;
 
-namespace NBTExplorer
+namespace Taggy
 {
     public static class FormRegistry
     {

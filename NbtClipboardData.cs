@@ -2,7 +2,7 @@
 using System.IO;
 using Substrate.Nbt;
 
-namespace NBTExplorer
+namespace Taggy
 {
     public class NbtClipboardData
     {

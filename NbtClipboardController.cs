@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NBTExplorer
+namespace Taggy
 {
     public static class NbtClipboardController
     {

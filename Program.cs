@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
-using NBTExplorer.Windows;
+using Taggy.Windows;
 
-namespace NBTExplorer
+namespace Taggy
 {
     static class Program
     {
@@ -19,7 +19,7 @@ namespace NBTExplorer
 
         public static void StaticInitFailure (Exception e)
         {
-            Console.WriteLine("Static Initialization Failure:");
+            Console.WriteLine("靜態初始化失敗:");
 
             Exception original = e;
             while (e != null) {
@@ -28,7 +28,7 @@ namespace NBTExplorer
                 e = e.InnerException;
             }
 
-            MessageBox.Show("Application failed during static initialization: " + original.Message);
+            MessageBox.Show("程式靜態初始化失敗: " + original.Message);
             Application.Exit();
         }
     }
