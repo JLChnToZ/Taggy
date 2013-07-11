@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NBTExplorer.Model
+namespace Taggy.Model
 {
     [Flags]
     public enum NodeCapabilities

@@ -1,4 +1,4 @@
-﻿namespace NBTExplorer.Windows
+﻿namespace Taggy.Windows
 {
     partial class CancelSearchForm
     {
@@ -33,25 +33,27 @@
             // _buttonCancel
             // 
             this._buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this._buttonCancel.Location = new System.Drawing.Point(124, 57);
+            this._buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this._buttonCancel.Location = new System.Drawing.Point(124, 53);
             this._buttonCancel.Name = "_buttonCancel";
-            this._buttonCancel.Size = new System.Drawing.Size(75, 23);
+            this._buttonCancel.Size = new System.Drawing.Size(75, 21);
             this._buttonCancel.TabIndex = 0;
-            this._buttonCancel.Text = "Cancel";
+            this._buttonCancel.Text = "取消";
             this._buttonCancel.UseVisualStyleBackColor = true;
             // 
             // CancelSearchForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this._buttonCancel;
-            this.ClientSize = new System.Drawing.Size(322, 92);
+            this.ClientSize = new System.Drawing.Size(322, 85);
             this.Controls.Add(this._buttonCancel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CancelSearchForm";
-            this.Text = "Searching...";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "搜尋中…";
             this.ResumeLayout(false);
 
         }

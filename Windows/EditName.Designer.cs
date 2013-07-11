@@ -1,4 +1,4 @@
-﻿namespace NBTExplorer.Windows
+﻿namespace Taggy.Windows
 {
     partial class EditName
     {
@@ -34,40 +34,42 @@
             // 
             // _nameField
             // 
-            this._nameField.Location = new System.Drawing.Point(12, 10);
+            this._nameField.Location = new System.Drawing.Point(12, 9);
             this._nameField.Name = "_nameField";
-            this._nameField.Size = new System.Drawing.Size(196, 20);
+            this._nameField.Size = new System.Drawing.Size(196, 22);
             this._nameField.TabIndex = 0;
             // 
             // _buttonCancel
             // 
             this._buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this._buttonCancel.Location = new System.Drawing.Point(52, 37);
+            this._buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this._buttonCancel.Location = new System.Drawing.Point(52, 34);
             this._buttonCancel.Name = "_buttonCancel";
-            this._buttonCancel.Size = new System.Drawing.Size(75, 23);
+            this._buttonCancel.Size = new System.Drawing.Size(75, 21);
             this._buttonCancel.TabIndex = 11;
-            this._buttonCancel.Text = "Cancel";
+            this._buttonCancel.Text = "取消";
             this._buttonCancel.UseVisualStyleBackColor = true;
             // 
             // _buttonOK
             // 
             this._buttonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._buttonOK.Location = new System.Drawing.Point(133, 37);
+            this._buttonOK.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this._buttonOK.Location = new System.Drawing.Point(133, 34);
             this._buttonOK.Name = "_buttonOK";
-            this._buttonOK.Size = new System.Drawing.Size(75, 23);
+            this._buttonOK.Size = new System.Drawing.Size(75, 21);
             this._buttonOK.TabIndex = 10;
-            this._buttonOK.Text = "OK";
+            this._buttonOK.Text = "確定";
             this._buttonOK.UseVisualStyleBackColor = true;
             this._buttonOK.Click += new System.EventHandler(this._buttonOK_Click);
             // 
             // EditName
             // 
             this.AcceptButton = this._buttonOK;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this._buttonCancel;
-            this.ClientSize = new System.Drawing.Size(220, 72);
+            this.ClientSize = new System.Drawing.Size(220, 66);
             this.Controls.Add(this._buttonCancel);
             this.Controls.Add(this._buttonOK);
             this.Controls.Add(this._nameField);
@@ -76,7 +78,9 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "EditName";
-            this.Text = "Edit Name...";
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "編輯名稱…";
             this.ResumeLayout(false);
             this.PerformLayout();
 

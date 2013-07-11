@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 using Substrate.Core;
 using System.Collections.Generic;
 
-namespace NBTExplorer.Model
+namespace Taggy.Model
 {
     public class RegionFileDataNode : DataNode
     {
@@ -63,7 +63,7 @@ namespace NBTExplorer.Model
             }
             catch {
                 if (FormRegistry.MessageBox != null)
-                    FormRegistry.MessageBox("Not a valid region file.");
+                    FormRegistry.MessageBox("不是正確的 Region 格式");
             }
         }
 

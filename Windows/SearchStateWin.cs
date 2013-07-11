@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using NBTExplorer.Model;
+using Taggy.Model;
 using System.Windows.Forms;
 
-namespace NBTExplorer.Windows
+namespace Taggy.Windows
 {
     internal class SearchStateWin : ISearchState
     {

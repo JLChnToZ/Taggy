@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace NBTExplorer.Windows
+namespace Taggy.Windows
 {
     public partial class EditString : Form
     {

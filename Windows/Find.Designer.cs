@@ -1,4 +1,4 @@
-﻿namespace NBTExplorer.Windows
+﻿namespace Taggy.Windows
 {
     partial class Find
     {
@@ -40,49 +40,52 @@
             this._cbName.AutoSize = true;
             this._cbName.Checked = true;
             this._cbName.CheckState = System.Windows.Forms.CheckState.Checked;
-            this._cbName.Location = new System.Drawing.Point(13, 13);
+            this._cbName.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this._cbName.Location = new System.Drawing.Point(13, 12);
             this._cbName.Name = "_cbName";
             this._cbName.Size = new System.Drawing.Size(57, 17);
             this._cbName.TabIndex = 0;
-            this._cbName.Text = "Name:";
+            this._cbName.Text = "名稱:";
             this._cbName.UseVisualStyleBackColor = true;
             // 
             // _cbValue
             // 
             this._cbValue.AutoSize = true;
-            this._cbValue.Location = new System.Drawing.Point(13, 37);
+            this._cbValue.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this._cbValue.Location = new System.Drawing.Point(13, 34);
             this._cbValue.Name = "_cbValue";
-            this._cbValue.Size = new System.Drawing.Size(56, 17);
+            this._cbValue.Size = new System.Drawing.Size(45, 17);
             this._cbValue.TabIndex = 1;
-            this._cbValue.Text = "Value:";
+            this._cbValue.Text = "值:";
             this._cbValue.UseVisualStyleBackColor = true;
             // 
             // _textName
             // 
             this._textName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this._textName.Location = new System.Drawing.Point(76, 12);
+            this._textName.Location = new System.Drawing.Point(76, 11);
             this._textName.Name = "_textName";
-            this._textName.Size = new System.Drawing.Size(273, 20);
+            this._textName.Size = new System.Drawing.Size(273, 22);
             this._textName.TabIndex = 2;
             // 
             // _textValue
             // 
             this._textValue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this._textValue.Location = new System.Drawing.Point(76, 34);
+            this._textValue.Location = new System.Drawing.Point(76, 31);
             this._textValue.Name = "_textValue";
-            this._textValue.Size = new System.Drawing.Size(273, 20);
+            this._textValue.Size = new System.Drawing.Size(273, 22);
             this._textValue.TabIndex = 3;
             // 
             // _buttonFind
             // 
             this._buttonFind.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._buttonFind.Location = new System.Drawing.Point(274, 65);
+            this._buttonFind.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this._buttonFind.Location = new System.Drawing.Point(274, 60);
             this._buttonFind.Name = "_buttonFind";
-            this._buttonFind.Size = new System.Drawing.Size(75, 23);
+            this._buttonFind.Size = new System.Drawing.Size(75, 21);
             this._buttonFind.TabIndex = 4;
-            this._buttonFind.Text = "Find";
+            this._buttonFind.Text = "找下一個";
             this._buttonFind.UseVisualStyleBackColor = true;
             this._buttonFind.Click += new System.EventHandler(this._buttonFind_Click);
             // 
@@ -90,21 +93,22 @@
             // 
             this._buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this._buttonCancel.Location = new System.Drawing.Point(193, 65);
+            this._buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this._buttonCancel.Location = new System.Drawing.Point(193, 60);
             this._buttonCancel.Name = "_buttonCancel";
-            this._buttonCancel.Size = new System.Drawing.Size(75, 23);
+            this._buttonCancel.Size = new System.Drawing.Size(75, 21);
             this._buttonCancel.TabIndex = 5;
-            this._buttonCancel.Text = "Cancel";
+            this._buttonCancel.Text = "取消";
             this._buttonCancel.UseVisualStyleBackColor = true;
             this._buttonCancel.Click += new System.EventHandler(this._buttonCancel_Click);
             // 
             // Find
             // 
             this.AcceptButton = this._buttonFind;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this._buttonCancel;
-            this.ClientSize = new System.Drawing.Size(361, 100);
+            this.ClientSize = new System.Drawing.Size(361, 92);
             this.Controls.Add(this._buttonCancel);
             this.Controls.Add(this._buttonFind);
             this.Controls.Add(this._textValue);
@@ -115,7 +119,9 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Find";
-            this.Text = "Find";
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "尋找";
             this.ResumeLayout(false);
             this.PerformLayout();
 

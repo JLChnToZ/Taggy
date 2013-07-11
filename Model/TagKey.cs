@@ -1,7 +1,7 @@
 ﻿using System;
 using Substrate.Nbt;
 
-namespace NBTExplorer.Model
+namespace Taggy.Model
 {
     public class TagKey : IComparable<TagKey>
     {

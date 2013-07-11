@@ -1,4 +1,4 @@
-﻿namespace NBTExplorer.Windows
+﻿namespace Taggy.Windows
 {
     partial class EditString
     {
@@ -34,40 +34,45 @@
             // 
             // _stringField
             // 
-            this._stringField.Location = new System.Drawing.Point(12, 12);
+            this._stringField.AcceptsReturn = true;
+            this._stringField.AcceptsTab = true;
+            this._stringField.Location = new System.Drawing.Point(12, 11);
             this._stringField.Multiline = true;
             this._stringField.Name = "_stringField";
-            this._stringField.Size = new System.Drawing.Size(331, 116);
+            this._stringField.Size = new System.Drawing.Size(331, 107);
             this._stringField.TabIndex = 4;
             // 
             // _buttonCancel
             // 
             this._buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this._buttonCancel.Location = new System.Drawing.Point(187, 134);
+            this._buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this._buttonCancel.Location = new System.Drawing.Point(187, 124);
             this._buttonCancel.Name = "_buttonCancel";
-            this._buttonCancel.Size = new System.Drawing.Size(75, 23);
+            this._buttonCancel.Size = new System.Drawing.Size(75, 21);
             this._buttonCancel.TabIndex = 9;
-            this._buttonCancel.Text = "Cancel";
+            this._buttonCancel.Text = "取消";
             this._buttonCancel.UseVisualStyleBackColor = true;
             // 
             // _buttonOK
             // 
             this._buttonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._buttonOK.Location = new System.Drawing.Point(268, 134);
+            this._buttonOK.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this._buttonOK.Location = new System.Drawing.Point(268, 124);
             this._buttonOK.Name = "_buttonOK";
-            this._buttonOK.Size = new System.Drawing.Size(75, 23);
+            this._buttonOK.Size = new System.Drawing.Size(75, 21);
             this._buttonOK.TabIndex = 8;
-            this._buttonOK.Text = "OK";
+            this._buttonOK.Text = "確定";
             this._buttonOK.UseVisualStyleBackColor = true;
             this._buttonOK.Click += new System.EventHandler(this._buttonOK_Click);
             // 
             // EditString
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AcceptButton = this._buttonOK;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this._buttonCancel;
-            this.ClientSize = new System.Drawing.Size(355, 169);
+            this.ClientSize = new System.Drawing.Size(355, 156);
             this.Controls.Add(this._buttonCancel);
             this.Controls.Add(this._buttonOK);
             this.Controls.Add(this._stringField);
@@ -77,7 +82,8 @@
             this.Name = "EditString";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Text = "Edit String...";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "編輯字串…";
             this.ResumeLayout(false);
             this.PerformLayout();
 

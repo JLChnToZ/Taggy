@@ -1,7 +1,7 @@
 ﻿using System;
 using Substrate.Nbt;
 
-namespace NBTExplorer.Model
+namespace Taggy.Model
 {
     public class TagIntArrayDataNode : TagDataNode
     {
@@ -26,7 +26,7 @@ namespace NBTExplorer.Model
 
         public override string NodeDisplay
         {
-            get { return NodeDisplayPrefix + Tag.Data.Length + " integers"; }
+            get { return NodeDisplayPrefix + Tag.Data.Length + " 個整數"; }
         }
 
         private bool IsMono ()

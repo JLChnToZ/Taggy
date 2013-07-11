@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Substrate.Nbt;
 
-namespace NBTExplorer.Model
+namespace Taggy.Model
 {
     public class TagCompoundDataNode : TagDataNode.Container
     {
@@ -74,7 +74,7 @@ namespace NBTExplorer.Model
 
             string name = clipboard.Name;
             if (String.IsNullOrEmpty(name))
-                name = "UNNAMED";
+                name = "未命名";
 
             AddTag(clipboard.Node, MakeUniqueName(name));
             return true;
@@ -127,7 +127,7 @@ namespace NBTExplorer.Model
 
         private string MakeCandidateName (string name, int index)
         {
-            return name + " (Copy " + index + ")";
+            return name + " (複製 " + index + ")";
         }
     }
 }

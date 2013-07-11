@@ -1,6 +1,10 @@
-# NBTExplorer
+# T@GGY (Forked from NBTExplorer)
 
-NBTExplorer is an open-source NBT editor for all common sources of NBT data.  It's mainly intended for editing [Minecraft](http://www.minecraft.net) game data.
+T@GGY is an open-source NBT editor for all common sources of NBT data.  It's mainly intended for editing [Minecraft](http://www.minecraft.net) game data.
+
+## Difference between T@GGY and NBTExplorer
+* T@GGY is in full Traditional Chinese.
+* T@GGY has sightly enhanced and modified the UI.
 
 ## Supported Formats
 
@@ -25,6 +29,8 @@ NBTExplorer is compatible with recent Mono runtimes, at least 2.6 or later.
 Minimally, your system needs the `mono-core` and `mono-winforms` packages, or whatever package set is equivalent.
 
 ### Mac
+
+*I have discontinured mac version in T@GGY, but you still can download and use it .*
 
 A separate Mac version with a native UI is available.  All Mono dependencies are included within the app package.
 Minimum supported OS is OSX 10.8 Mountain Lion, but it may run on versions as early as Snow Leopard.

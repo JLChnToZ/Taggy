@@ -1,4 +1,4 @@
-﻿namespace NBTExplorer.Windows
+﻿namespace Taggy.Windows
 {
     partial class HexEditor
     {
@@ -27,6 +27,7 @@
         /// </summary>
         private void InitializeComponent ()
         {
+            this.hexBox1 = new Be.Windows.Forms.HexBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this._curPositionLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this._curElementLabel = new System.Windows.Forms.ToolStripStatusLabel();
@@ -34,11 +35,27 @@
             this._insertStateLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this._buttonCancel = new System.Windows.Forms.Button();
             this._buttonOK = new System.Windows.Forms.Button();
-            this.hexBox1 = new Be.Windows.Forms.HexBox();
-            this._buttonImport = new System.Windows.Forms.Button();
-            this._buttonExport = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // hexBox1
+            // 
+            this.hexBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.hexBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.hexBox1.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hexBox1.LineInfoForeColor = System.Drawing.Color.Empty;
+            this.hexBox1.LineInfoVisible = true;
+            this.hexBox1.Location = new System.Drawing.Point(12, 11);
+            this.hexBox1.Name = "hexBox1";
+            this.hexBox1.ReadOnly = true;
+            this.hexBox1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            this.hexBox1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.hexBox1.ShadowSelectionColor = System.Drawing.SystemColors.Highlight;
+            this.hexBox1.Size = new System.Drawing.Size(492, 267);
+            this.hexBox1.TabIndex = 0;
+            this.hexBox1.VScrollBarVisible = true;
             // 
             // statusStrip1
             // 
@@ -47,7 +64,7 @@
             this._curElementLabel,
             this._space,
             this._insertStateLabel});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 333);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 306);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(516, 22);
             this.statusStrip1.TabIndex = 1;
@@ -63,94 +80,62 @@
             // _curElementLabel
             // 
             this._curElementLabel.Name = "_curElementLabel";
-            this._curElementLabel.Size = new System.Drawing.Size(59, 17);
+            this._curElementLabel.Size = new System.Drawing.Size(64, 17);
             this._curElementLabel.Text = "Element 0";
             this._curElementLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // _space
             // 
             this._space.Name = "_space";
-            this._space.Size = new System.Drawing.Size(284, 17);
+            this._space.Size = new System.Drawing.Size(305, 17);
             this._space.Spring = true;
             // 
             // _insertStateLabel
             // 
             this._insertStateLabel.Name = "_insertStateLabel";
-            this._insertStateLabel.Size = new System.Drawing.Size(58, 17);
-            this._insertStateLabel.Text = "Overwrite";
+            this._insertStateLabel.Size = new System.Drawing.Size(32, 17);
+            this._insertStateLabel.Text = "覆寫";
             // 
             // _buttonCancel
             // 
             this._buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this._buttonCancel.Location = new System.Drawing.Point(348, 307);
+            this._buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this._buttonCancel.Location = new System.Drawing.Point(348, 283);
             this._buttonCancel.Name = "_buttonCancel";
-            this._buttonCancel.Size = new System.Drawing.Size(75, 23);
+            this._buttonCancel.Size = new System.Drawing.Size(75, 21);
             this._buttonCancel.TabIndex = 13;
-            this._buttonCancel.Text = "Cancel";
+            this._buttonCancel.Text = "取消";
             this._buttonCancel.UseVisualStyleBackColor = true;
             // 
             // _buttonOK
             // 
             this._buttonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._buttonOK.Location = new System.Drawing.Point(429, 307);
+            this._buttonOK.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this._buttonOK.Location = new System.Drawing.Point(429, 283);
             this._buttonOK.Name = "_buttonOK";
-            this._buttonOK.Size = new System.Drawing.Size(75, 23);
+            this._buttonOK.Size = new System.Drawing.Size(75, 21);
             this._buttonOK.TabIndex = 12;
-            this._buttonOK.Text = "OK";
+            this._buttonOK.Text = "確定";
             this._buttonOK.UseVisualStyleBackColor = true;
             this._buttonOK.Click += new System.EventHandler(this._buttonOK_Click);
             // 
-            // hexBox1
-            // 
-            this.hexBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.hexBox1.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hexBox1.LineInfoForeColor = System.Drawing.Color.Empty;
-            this.hexBox1.LineInfoVisible = true;
-            this.hexBox1.Location = new System.Drawing.Point(12, 12);
-            this.hexBox1.Name = "hexBox1";
-            this.hexBox1.ReadOnly = true;
-            this.hexBox1.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hexBox1.Size = new System.Drawing.Size(492, 289);
-            this.hexBox1.TabIndex = 0;
-            this.hexBox1.VScrollBarVisible = true;
-            // 
-            // _buttonImport
-            // 
-            this._buttonImport.Location = new System.Drawing.Point(12, 307);
-            this._buttonImport.Name = "_buttonImport";
-            this._buttonImport.Size = new System.Drawing.Size(75, 23);
-            this._buttonImport.TabIndex = 14;
-            this._buttonImport.Text = "Import";
-            this._buttonImport.UseVisualStyleBackColor = true;
-            this._buttonImport.Click += new System.EventHandler(this._buttonImport_Click);
-            // 
-            // _buttonExport
-            // 
-            this._buttonExport.Location = new System.Drawing.Point(93, 307);
-            this._buttonExport.Name = "_buttonExport";
-            this._buttonExport.Size = new System.Drawing.Size(75, 23);
-            this._buttonExport.TabIndex = 15;
-            this._buttonExport.Text = "Export";
-            this._buttonExport.UseVisualStyleBackColor = true;
-            this._buttonExport.Click += new System.EventHandler(this._buttonExport_Click);
-            // 
             // HexEditor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AcceptButton = this._buttonOK;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this._buttonCancel;
-            this.ClientSize = new System.Drawing.Size(516, 355);
-            this.Controls.Add(this._buttonExport);
-            this.Controls.Add(this._buttonImport);
+            this.ClientSize = new System.Drawing.Size(516, 328);
             this.Controls.Add(this._buttonCancel);
             this.Controls.Add(this._buttonOK);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.hexBox1);
             this.Name = "HexEditor";
-            this.Text = "HexEditor";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "十六進制編輯器";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -168,7 +153,5 @@
         private System.Windows.Forms.ToolStripStatusLabel _curElementLabel;
         private System.Windows.Forms.ToolStripStatusLabel _space;
         private System.Windows.Forms.ToolStripStatusLabel _insertStateLabel;
-        private System.Windows.Forms.Button _buttonImport;
-        private System.Windows.Forms.Button _buttonExport;
     }
 }

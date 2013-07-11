@@ -1,6 +1,6 @@
 ﻿using Substrate.Core;
 
-namespace NBTExplorer.Model
+namespace Taggy.Model
 {
     public class CubicRegionFile : RegionFile
     {

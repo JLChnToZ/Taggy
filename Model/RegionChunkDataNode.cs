@@ -2,7 +2,7 @@
 using Substrate.Core;
 using Substrate.Nbt;
 
-namespace NBTExplorer.Model
+namespace Taggy.Model
 {
     public class RegionChunkDataNode : DataNode, IMetaTagContainer
     {
@@ -38,7 +38,7 @@ namespace NBTExplorer.Model
 
         public override string NodeDisplay
         {
-            get { return "Chunk [" + _x + ", " + _z + "]"; }
+            get { return "塊 [" + _x + ", " + _z + "]"; }
         }
 
         protected override void ExpandCore ()

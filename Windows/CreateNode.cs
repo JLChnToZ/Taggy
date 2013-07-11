@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using Substrate.Nbt;
 
-namespace NBTExplorer.Windows
+namespace Taggy.Windows
 {
     public partial class CreateNodeForm : Form
     {

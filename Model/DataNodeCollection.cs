@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace NBTExplorer.Model
+namespace Taggy.Model
 {
     public class DataNodeCollection : IList<DataNode>
     {
@@ -24,7 +24,7 @@ namespace NBTExplorer.Model
             if (item == null)
                 throw new ArgumentNullException("item");
             if (item.Parent != null)
-                throw new ArgumentException("The item is already assigned to another DataNode.");
+                throw new ArgumentException("此項目已被分配到另一個資料節點");
 
             item.Parent = _parent;
 
@@ -52,7 +52,7 @@ namespace NBTExplorer.Model
                 if (value == null)
                     throw new ArgumentNullException("item");
                 if (value.Parent != null)
-                    throw new ArgumentException("The item is already assigned to another DataNode.");
+                    throw new ArgumentException("此項目已被分配到另一個資料節點");
 
                 _nodes[index].Parent = null;
                 _nodes[index] = value;
@@ -65,7 +65,7 @@ namespace NBTExplorer.Model
             if (item == null)
                 throw new ArgumentNullException("item");
             if (item.Parent != null)
-                throw new ArgumentException("The item is already assigned to another DataNode.");
+                throw new ArgumentException("此項目已被分配到另一個資料節點");
 
             item.Parent = _parent;
 

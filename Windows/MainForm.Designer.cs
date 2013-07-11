@@ -1,4 +1,4 @@
-﻿namespace NBTExplorer.Windows
+﻿namespace Taggy.Windows
 {
     partial class MainForm
     {
@@ -36,6 +36,7 @@
             this._menuItemOpenMinecraftSaveFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this._menuItemSave = new System.Windows.Forms.ToolStripMenuItem();
+            this._menuItemRefresh = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this._menuItemRecentFiles = new System.Windows.Forms.ToolStripMenuItem();
             this._menuItemRecentFolders = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,17 +50,24 @@
             this._menuItemRename = new System.Windows.Forms.ToolStripMenuItem();
             this._menuItemEditValue = new System.Windows.Forms.ToolStripMenuItem();
             this._menuItemDelete = new System.Windows.Forms.ToolStripMenuItem();
-            this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this._menuItemFind = new System.Windows.Forms.ToolStripMenuItem();
             this._menuItemFindNext = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._menuItemAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this._nodeTree = new NBTExplorer.Vendor.MultiSelectTreeView.MultiSelectTreeView();
+            this._menuItemCut2 = new System.Windows.Forms.ToolStripMenuItem();
+            this._menuItemCopy2 = new System.Windows.Forms.ToolStripMenuItem();
+            this._menuItemPaste2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator7_2 = new System.Windows.Forms.ToolStripSeparator();
+            this._menuItemRename2 = new System.Windows.Forms.ToolStripMenuItem();
+            this._menuItemEditValue2 = new System.Windows.Forms.ToolStripMenuItem();
+            this._menuItemDelete2 = new System.Windows.Forms.ToolStripMenuItem();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this._buttonOpen = new System.Windows.Forms.ToolStripButton();
             this._buttonOpenFolder = new System.Windows.Forms.ToolStripButton();
             this._buttonSave = new System.Windows.Forms.ToolStripButton();
+            this._buttonRefresh = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this._buttonCut = new System.Windows.Forms.ToolStripButton();
             this._buttonCopy = new System.Windows.Forms.ToolStripButton();
@@ -89,19 +97,23 @@
             this.ContentPanel = new System.Windows.Forms.ToolStripContentPanel();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this._buttonRefresh = new System.Windows.Forms.ToolStripButton();
-            this._menuItemRefresh = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this._nodeTree = new Taggy.Vendor.MultiSelectTreeView.MultiSelectTreeView();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.toolStripContainer1.ContentPanel.SuspendLayout();
+            this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
+            this.toolStripContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
-            this.searchToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -124,16 +136,16 @@
             this.toolStripSeparator8,
             this._menuItemExit});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "&File";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.fileToolStripMenuItem.Text = "檔案 (&F)";
             // 
             // _menuItemOpen
             // 
             this._menuItemOpen.Image = ((System.Drawing.Image)(resources.GetObject("_menuItemOpen.Image")));
             this._menuItemOpen.Name = "_menuItemOpen";
             this._menuItemOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this._menuItemOpen.Size = new System.Drawing.Size(223, 22);
-            this._menuItemOpen.Text = "&Open...";
+            this._menuItemOpen.Size = new System.Drawing.Size(237, 22);
+            this._menuItemOpen.Text = "開啟... (&O)";
             // 
             // _menuItemOpenFolder
             // 
@@ -141,57 +153,66 @@
             this._menuItemOpenFolder.Name = "_menuItemOpenFolder";
             this._menuItemOpenFolder.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.O)));
-            this._menuItemOpenFolder.Size = new System.Drawing.Size(223, 22);
-            this._menuItemOpenFolder.Text = "Open &Folder...";
+            this._menuItemOpenFolder.Size = new System.Drawing.Size(237, 22);
+            this._menuItemOpenFolder.Text = "開啟資料夾... (&F)";
             // 
             // _menuItemOpenMinecraftSaveFolder
             // 
             this._menuItemOpenMinecraftSaveFolder.Name = "_menuItemOpenMinecraftSaveFolder";
-            this._menuItemOpenMinecraftSaveFolder.Size = new System.Drawing.Size(223, 22);
-            this._menuItemOpenMinecraftSaveFolder.Text = "Open &Minecraft Save Folder";
+            this._menuItemOpenMinecraftSaveFolder.Size = new System.Drawing.Size(237, 22);
+            this._menuItemOpenMinecraftSaveFolder.Text = "開啟 &Minecraft 存檔資料夾...";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(220, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(234, 6);
             // 
             // _menuItemSave
             // 
             this._menuItemSave.Image = ((System.Drawing.Image)(resources.GetObject("_menuItemSave.Image")));
             this._menuItemSave.Name = "_menuItemSave";
             this._menuItemSave.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this._menuItemSave.Size = new System.Drawing.Size(223, 22);
-            this._menuItemSave.Text = "&Save";
+            this._menuItemSave.Size = new System.Drawing.Size(237, 22);
+            this._menuItemSave.Text = "儲存 (&S)";
+            // 
+            // _menuItemRefresh
+            // 
+            this._menuItemRefresh.Image = ((System.Drawing.Image)(resources.GetObject("_menuItemRefresh.Image")));
+            this._menuItemRefresh.Name = "_menuItemRefresh";
+            this._menuItemRefresh.ShortcutKeys = System.Windows.Forms.Keys.F5;
+            this._menuItemRefresh.Size = new System.Drawing.Size(237, 22);
+            this._menuItemRefresh.Text = "重新整理 (&R)";
+            this._menuItemRefresh.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(220, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(234, 6);
             // 
             // _menuItemRecentFiles
             // 
             this._menuItemRecentFiles.Name = "_menuItemRecentFiles";
-            this._menuItemRecentFiles.Size = new System.Drawing.Size(223, 22);
-            this._menuItemRecentFiles.Text = "Recent Files";
+            this._menuItemRecentFiles.Size = new System.Drawing.Size(237, 22);
+            this._menuItemRecentFiles.Text = "最近的檔案";
             // 
             // _menuItemRecentFolders
             // 
             this._menuItemRecentFolders.Name = "_menuItemRecentFolders";
-            this._menuItemRecentFolders.Size = new System.Drawing.Size(223, 22);
-            this._menuItemRecentFolders.Text = "Recent Folders";
+            this._menuItemRecentFolders.Size = new System.Drawing.Size(237, 22);
+            this._menuItemRecentFolders.Text = "最近的資料夾";
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(220, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(234, 6);
             // 
             // _menuItemExit
             // 
             this._menuItemExit.Image = ((System.Drawing.Image)(resources.GetObject("_menuItemExit.Image")));
             this._menuItemExit.Name = "_menuItemExit";
             this._menuItemExit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this._menuItemExit.Size = new System.Drawing.Size(223, 22);
-            this._menuItemExit.Text = "E&xit";
+            this._menuItemExit.Size = new System.Drawing.Size(237, 22);
+            this._menuItemExit.Text = "離開 (&X)";
             // 
             // editToolStripMenuItem
             // 
@@ -202,120 +223,156 @@
             this.toolStripSeparator7,
             this._menuItemRename,
             this._menuItemEditValue,
-            this._menuItemDelete});
+            this._menuItemDelete,
+            this.toolStripMenuItem1,
+            this._menuItemFind,
+            this._menuItemFindNext});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
-            this.editToolStripMenuItem.Text = "&Edit";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.editToolStripMenuItem.Text = "編輯 (&E)";
             // 
             // _menuItemCut
             // 
             this._menuItemCut.Image = ((System.Drawing.Image)(resources.GetObject("_menuItemCut.Image")));
             this._menuItemCut.Name = "_menuItemCut";
             this._menuItemCut.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this._menuItemCut.Size = new System.Drawing.Size(166, 22);
-            this._menuItemCut.Text = "Cu&t";
+            this._menuItemCut.Size = new System.Drawing.Size(187, 22);
+            this._menuItemCut.Text = "剪下 (&X)";
             // 
             // _menuItemCopy
             // 
             this._menuItemCopy.Image = ((System.Drawing.Image)(resources.GetObject("_menuItemCopy.Image")));
             this._menuItemCopy.Name = "_menuItemCopy";
             this._menuItemCopy.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this._menuItemCopy.Size = new System.Drawing.Size(166, 22);
-            this._menuItemCopy.Text = "&Copy";
+            this._menuItemCopy.Size = new System.Drawing.Size(187, 22);
+            this._menuItemCopy.Text = "複製 (&C)";
             // 
             // _menuItemPaste
             // 
             this._menuItemPaste.Image = ((System.Drawing.Image)(resources.GetObject("_menuItemPaste.Image")));
             this._menuItemPaste.Name = "_menuItemPaste";
             this._menuItemPaste.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this._menuItemPaste.Size = new System.Drawing.Size(166, 22);
-            this._menuItemPaste.Text = "&Paste";
+            this._menuItemPaste.Size = new System.Drawing.Size(187, 22);
+            this._menuItemPaste.Text = "貼上 (&P)";
             // 
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(163, 6);
+            this.toolStripSeparator7.Size = new System.Drawing.Size(184, 6);
             // 
             // _menuItemRename
             // 
             this._menuItemRename.Image = ((System.Drawing.Image)(resources.GetObject("_menuItemRename.Image")));
             this._menuItemRename.Name = "_menuItemRename";
             this._menuItemRename.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this._menuItemRename.Size = new System.Drawing.Size(166, 22);
-            this._menuItemRename.Text = "&Rename";
+            this._menuItemRename.Size = new System.Drawing.Size(187, 22);
+            this._menuItemRename.Text = "重新命名 (&R)";
             // 
             // _menuItemEditValue
             // 
             this._menuItemEditValue.Image = ((System.Drawing.Image)(resources.GetObject("_menuItemEditValue.Image")));
             this._menuItemEditValue.Name = "_menuItemEditValue";
             this._menuItemEditValue.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this._menuItemEditValue.Size = new System.Drawing.Size(166, 22);
-            this._menuItemEditValue.Text = "&Edit Value";
+            this._menuItemEditValue.Size = new System.Drawing.Size(187, 22);
+            this._menuItemEditValue.Text = "修改值 (&E)";
             // 
             // _menuItemDelete
             // 
             this._menuItemDelete.Image = ((System.Drawing.Image)(resources.GetObject("_menuItemDelete.Image")));
             this._menuItemDelete.Name = "_menuItemDelete";
             this._menuItemDelete.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this._menuItemDelete.Size = new System.Drawing.Size(166, 22);
-            this._menuItemDelete.Text = "&Delete";
+            this._menuItemDelete.Size = new System.Drawing.Size(187, 22);
+            this._menuItemDelete.Text = "刪除 (&D)";
             // 
-            // searchToolStripMenuItem
+            // toolStripMenuItem1
             // 
-            this.searchToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this._menuItemFind,
-            this._menuItemFindNext});
-            this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
-            this.searchToolStripMenuItem.Text = "&Search";
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(184, 6);
             // 
             // _menuItemFind
             // 
             this._menuItemFind.Image = ((System.Drawing.Image)(resources.GetObject("_menuItemFind.Image")));
             this._menuItemFind.Name = "_menuItemFind";
             this._menuItemFind.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
-            this._menuItemFind.Size = new System.Drawing.Size(152, 22);
-            this._menuItemFind.Text = "Find...";
+            this._menuItemFind.Size = new System.Drawing.Size(187, 22);
+            this._menuItemFind.Text = "尋找...";
             // 
             // _menuItemFindNext
             // 
             this._menuItemFindNext.Image = ((System.Drawing.Image)(resources.GetObject("_menuItemFindNext.Image")));
             this._menuItemFindNext.Name = "_menuItemFindNext";
             this._menuItemFindNext.ShortcutKeys = System.Windows.Forms.Keys.F3;
-            this._menuItemFindNext.Size = new System.Drawing.Size(152, 22);
-            this._menuItemFindNext.Text = "Find Next";
+            this._menuItemFindNext.Size = new System.Drawing.Size(187, 22);
+            this._menuItemFindNext.Text = "找下一個";
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._menuItemAbout});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "&Help";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.helpToolStripMenuItem.Text = "說明 (&H)";
             // 
             // _menuItemAbout
             // 
             this._menuItemAbout.Image = ((System.Drawing.Image)(resources.GetObject("_menuItemAbout.Image")));
             this._menuItemAbout.Name = "_menuItemAbout";
             this._menuItemAbout.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this._menuItemAbout.Size = new System.Drawing.Size(152, 22);
-            this._menuItemAbout.Text = "&About";
+            this._menuItemAbout.Size = new System.Drawing.Size(150, 22);
+            this._menuItemAbout.Text = "關於... (&A)";
             // 
-            // _nodeTree
+            // _menuItemCut2
             // 
-            this._nodeTree.AllowDrop = true;
-            this._nodeTree.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this._nodeTree.ImageIndex = 0;
-            this._nodeTree.ImageList = this.imageList1;
-            this._nodeTree.ItemHeight = 18;
-            this._nodeTree.Location = new System.Drawing.Point(0, 49);
-            this._nodeTree.Margin = new System.Windows.Forms.Padding(0);
-            this._nodeTree.Name = "_nodeTree";
-            this._nodeTree.SelectedImageIndex = 0;
-            this._nodeTree.Size = new System.Drawing.Size(619, 374);
-            this._nodeTree.TabIndex = 0;
+            this._menuItemCut2.Image = ((System.Drawing.Image)(resources.GetObject("_menuItemCut2.Image")));
+            this._menuItemCut2.Name = "_menuItemCut2";
+            this._menuItemCut2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
+            this._menuItemCut2.Size = new System.Drawing.Size(187, 22);
+            this._menuItemCut2.Text = "剪下 (&X)";
+            // 
+            // _menuItemCopy2
+            // 
+            this._menuItemCopy2.Image = ((System.Drawing.Image)(resources.GetObject("_menuItemCopy2.Image")));
+            this._menuItemCopy2.Name = "_menuItemCopy2";
+            this._menuItemCopy2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this._menuItemCopy2.Size = new System.Drawing.Size(187, 22);
+            this._menuItemCopy2.Text = "複製 (&C)";
+            // 
+            // _menuItemPaste2
+            // 
+            this._menuItemPaste2.Image = ((System.Drawing.Image)(resources.GetObject("_menuItemPaste2.Image")));
+            this._menuItemPaste2.Name = "_menuItemPaste2";
+            this._menuItemPaste2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
+            this._menuItemPaste2.Size = new System.Drawing.Size(187, 22);
+            this._menuItemPaste2.Text = "貼上 (&P)";
+            // 
+            // toolStripSeparator7_2
+            // 
+            this.toolStripSeparator7_2.Name = "toolStripSeparator7_2";
+            this.toolStripSeparator7_2.Size = new System.Drawing.Size(184, 6);
+            // 
+            // _menuItemRename2
+            // 
+            this._menuItemRename2.Image = ((System.Drawing.Image)(resources.GetObject("_menuItemRename2.Image")));
+            this._menuItemRename2.Name = "_menuItemRename2";
+            this._menuItemRename2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
+            this._menuItemRename2.Size = new System.Drawing.Size(187, 22);
+            this._menuItemRename2.Text = "重新命名 (&R)";
+            // 
+            // _menuItemEditValue2
+            // 
+            this._menuItemEditValue2.Image = ((System.Drawing.Image)(resources.GetObject("_menuItemEditValue2.Image")));
+            this._menuItemEditValue2.Name = "_menuItemEditValue2";
+            this._menuItemEditValue2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
+            this._menuItemEditValue2.Size = new System.Drawing.Size(187, 22);
+            this._menuItemEditValue2.Text = "修改值 (&E)";
+            // 
+            // _menuItemDelete2
+            // 
+            this._menuItemDelete2.Image = ((System.Drawing.Image)(resources.GetObject("_menuItemDelete2.Image")));
+            this._menuItemDelete2.Name = "_menuItemDelete2";
+            this._menuItemDelete2.ShortcutKeys = System.Windows.Forms.Keys.Delete;
+            this._menuItemDelete2.Size = new System.Drawing.Size(187, 22);
+            this._menuItemDelete2.Text = "刪除 (&D)";
             // 
             // imageList1
             // 
@@ -340,6 +397,7 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._buttonOpen,
             this._buttonOpenFolder,
@@ -367,10 +425,9 @@
             this._buttonAddTagCompound,
             this.toolStripSeparator5,
             this._buttonFindNext});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
+            this.toolStrip1.Location = new System.Drawing.Point(3, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(619, 25);
-            this.toolStrip1.Stretch = true;
+            this.toolStrip1.Size = new System.Drawing.Size(542, 25);
             this.toolStrip1.TabIndex = 0;
             // 
             // _buttonOpen
@@ -380,7 +437,7 @@
             this._buttonOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._buttonOpen.Name = "_buttonOpen";
             this._buttonOpen.Size = new System.Drawing.Size(23, 22);
-            this._buttonOpen.Text = "Open NBT Data Source";
+            this._buttonOpen.Text = "開啟 NBT 資料來源";
             // 
             // _buttonOpenFolder
             // 
@@ -389,7 +446,7 @@
             this._buttonOpenFolder.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._buttonOpenFolder.Name = "_buttonOpenFolder";
             this._buttonOpenFolder.Size = new System.Drawing.Size(23, 22);
-            this._buttonOpenFolder.Text = "Open Folder";
+            this._buttonOpenFolder.Text = "開啟資料夾";
             // 
             // _buttonSave
             // 
@@ -398,7 +455,17 @@
             this._buttonSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._buttonSave.Name = "_buttonSave";
             this._buttonSave.Size = new System.Drawing.Size(23, 22);
-            this._buttonSave.Text = "Save All Modified Tags";
+            this._buttonSave.Text = "儲存所有被修改的標籤";
+            // 
+            // _buttonRefresh
+            // 
+            this._buttonRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this._buttonRefresh.Image = ((System.Drawing.Image)(resources.GetObject("_buttonRefresh.Image")));
+            this._buttonRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this._buttonRefresh.Name = "_buttonRefresh";
+            this._buttonRefresh.Size = new System.Drawing.Size(23, 22);
+            this._buttonRefresh.Text = "從硬碟重新載入內容";
+            this._buttonRefresh.Click += new System.EventHandler(this._buttonRefresh_Click);
             // 
             // toolStripSeparator1
             // 
@@ -412,7 +479,7 @@
             this._buttonCut.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._buttonCut.Name = "_buttonCut";
             this._buttonCut.Size = new System.Drawing.Size(23, 22);
-            this._buttonCut.Text = "Cut";
+            this._buttonCut.Text = "剪下";
             // 
             // _buttonCopy
             // 
@@ -421,7 +488,7 @@
             this._buttonCopy.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._buttonCopy.Name = "_buttonCopy";
             this._buttonCopy.Size = new System.Drawing.Size(23, 22);
-            this._buttonCopy.Text = "Copy";
+            this._buttonCopy.Text = "複製";
             // 
             // _buttonPaste
             // 
@@ -430,7 +497,7 @@
             this._buttonPaste.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._buttonPaste.Name = "_buttonPaste";
             this._buttonPaste.Size = new System.Drawing.Size(23, 22);
-            this._buttonPaste.Text = "Paste";
+            this._buttonPaste.Text = "貼上";
             // 
             // toolStripSeparator6
             // 
@@ -444,7 +511,7 @@
             this._buttonRename.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._buttonRename.Name = "_buttonRename";
             this._buttonRename.Size = new System.Drawing.Size(23, 22);
-            this._buttonRename.Text = "Rename Tag";
+            this._buttonRename.Text = "標籤重新命名";
             // 
             // _buttonEdit
             // 
@@ -453,7 +520,7 @@
             this._buttonEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._buttonEdit.Name = "_buttonEdit";
             this._buttonEdit.Size = new System.Drawing.Size(23, 22);
-            this._buttonEdit.Text = "Edit Tag Value";
+            this._buttonEdit.Text = "修改標籤值";
             // 
             // _buttonDelete
             // 
@@ -462,7 +529,7 @@
             this._buttonDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._buttonDelete.Name = "_buttonDelete";
             this._buttonDelete.Size = new System.Drawing.Size(23, 22);
-            this._buttonDelete.Text = "Delete Tag";
+            this._buttonDelete.Text = "刪除標籤";
             // 
             // toolStripSeparator2
             // 
@@ -476,7 +543,7 @@
             this._buttonAddTagByte.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._buttonAddTagByte.Name = "_buttonAddTagByte";
             this._buttonAddTagByte.Size = new System.Drawing.Size(23, 22);
-            this._buttonAddTagByte.Text = "Add Byte Tag";
+            this._buttonAddTagByte.Text = "新增二進制標籤";
             // 
             // _buttonAddTagShort
             // 
@@ -485,7 +552,7 @@
             this._buttonAddTagShort.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._buttonAddTagShort.Name = "_buttonAddTagShort";
             this._buttonAddTagShort.Size = new System.Drawing.Size(23, 22);
-            this._buttonAddTagShort.Text = "Add Short Tag";
+            this._buttonAddTagShort.Text = "新增短整數標籤";
             // 
             // _buttonAddTagInt
             // 
@@ -494,7 +561,7 @@
             this._buttonAddTagInt.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._buttonAddTagInt.Name = "_buttonAddTagInt";
             this._buttonAddTagInt.Size = new System.Drawing.Size(23, 22);
-            this._buttonAddTagInt.Text = "Add Int Tag";
+            this._buttonAddTagInt.Text = "新增整數標籤";
             // 
             // _buttonAddTagLong
             // 
@@ -503,7 +570,7 @@
             this._buttonAddTagLong.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._buttonAddTagLong.Name = "_buttonAddTagLong";
             this._buttonAddTagLong.Size = new System.Drawing.Size(23, 22);
-            this._buttonAddTagLong.Text = "Add Long Tag";
+            this._buttonAddTagLong.Text = "新增長整數標籤";
             // 
             // _buttonAddTagFloat
             // 
@@ -512,7 +579,7 @@
             this._buttonAddTagFloat.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._buttonAddTagFloat.Name = "_buttonAddTagFloat";
             this._buttonAddTagFloat.Size = new System.Drawing.Size(23, 22);
-            this._buttonAddTagFloat.Text = "Add Float Tag";
+            this._buttonAddTagFloat.Text = "新增浮點數標籤";
             // 
             // _buttonAddTagDouble
             // 
@@ -521,7 +588,7 @@
             this._buttonAddTagDouble.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._buttonAddTagDouble.Name = "_buttonAddTagDouble";
             this._buttonAddTagDouble.Size = new System.Drawing.Size(23, 22);
-            this._buttonAddTagDouble.Text = "Add Double Tag";
+            this._buttonAddTagDouble.Text = "新增雙倍精確浮點數標籤";
             // 
             // _buttonAddTagByteArray
             // 
@@ -530,7 +597,7 @@
             this._buttonAddTagByteArray.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._buttonAddTagByteArray.Name = "_buttonAddTagByteArray";
             this._buttonAddTagByteArray.Size = new System.Drawing.Size(23, 22);
-            this._buttonAddTagByteArray.Text = "Add Byte Array Tag";
+            this._buttonAddTagByteArray.Text = "新增二進制陣列標籤";
             // 
             // _buttonAddTagIntArray
             // 
@@ -540,7 +607,7 @@
             this._buttonAddTagIntArray.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._buttonAddTagIntArray.Name = "_buttonAddTagIntArray";
             this._buttonAddTagIntArray.Size = new System.Drawing.Size(23, 22);
-            this._buttonAddTagIntArray.Text = "Add Int Array Tag";
+            this._buttonAddTagIntArray.Text = "新增整數陣列標籤";
             // 
             // _buttonAddTagString
             // 
@@ -549,7 +616,7 @@
             this._buttonAddTagString.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._buttonAddTagString.Name = "_buttonAddTagString";
             this._buttonAddTagString.Size = new System.Drawing.Size(23, 22);
-            this._buttonAddTagString.Text = "Add String Tag";
+            this._buttonAddTagString.Text = "新增字串標籤";
             // 
             // _buttonAddTagList
             // 
@@ -558,7 +625,7 @@
             this._buttonAddTagList.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._buttonAddTagList.Name = "_buttonAddTagList";
             this._buttonAddTagList.Size = new System.Drawing.Size(23, 22);
-            this._buttonAddTagList.Text = "Add List Tag";
+            this._buttonAddTagList.Text = "新增清單標籤";
             // 
             // _buttonAddTagCompound
             // 
@@ -567,7 +634,7 @@
             this._buttonAddTagCompound.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._buttonAddTagCompound.Name = "_buttonAddTagCompound";
             this._buttonAddTagCompound.Size = new System.Drawing.Size(23, 22);
-            this._buttonAddTagCompound.Text = "Add Compound Tag";
+            this._buttonAddTagCompound.Text = "新增複合標籤";
             // 
             // toolStripSeparator5
             // 
@@ -581,7 +648,7 @@
             this._buttonFindNext.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._buttonFindNext.Name = "_buttonFindNext";
             this._buttonFindNext.Size = new System.Drawing.Size(23, 22);
-            this._buttonFindNext.Text = "Find / Find Next";
+            this._buttonFindNext.Text = "尋找 / 找下一個";
             // 
             // BottomToolStripPanel
             // 
@@ -622,55 +689,80 @@
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.testToolStripMenuItem});
+            this._menuItemCut2,
+            this._menuItemCopy2,
+            this._menuItemPaste2,
+            this.toolStripSeparator7_2,
+            this._menuItemRename2,
+            this._menuItemEditValue2,
+            this._menuItemDelete2});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(97, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(100, 26);
             // 
             // testToolStripMenuItem
             // 
             this.testToolStripMenuItem.Name = "testToolStripMenuItem";
-            this.testToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.testToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
             this.testToolStripMenuItem.Text = "Test";
             // 
-            // _buttonRefresh
+            // toolStripContainer1
             // 
-            this._buttonRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this._buttonRefresh.Image = ((System.Drawing.Image)(resources.GetObject("_buttonRefresh.Image")));
-            this._buttonRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this._buttonRefresh.Name = "_buttonRefresh";
-            this._buttonRefresh.Size = new System.Drawing.Size(23, 22);
-            this._buttonRefresh.Text = "Refresh Content From Disk";
-            this._buttonRefresh.Click += new System.EventHandler(this._buttonRefresh_Click);
             // 
-            // _menuItemRefresh
+            // toolStripContainer1.ContentPanel
             // 
-            this._menuItemRefresh.Image = ((System.Drawing.Image)(resources.GetObject("_menuItemRefresh.Image")));
-            this._menuItemRefresh.Name = "_menuItemRefresh";
-            this._menuItemRefresh.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this._menuItemRefresh.Size = new System.Drawing.Size(223, 22);
-            this._menuItemRefresh.Text = "Refresh";
-            this._menuItemRefresh.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this._nodeTree);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(619, 341);
+            this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
+            this.toolStripContainer1.Name = "toolStripContainer1";
+            this.toolStripContainer1.Size = new System.Drawing.Size(619, 390);
+            this.toolStripContainer1.TabIndex = 1;
+            this.toolStripContainer1.Text = "toolStripContainer1";
+            // 
+            // toolStripContainer1.TopToolStripPanel
+            // 
+            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.menuStrip1);
+            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip1);
+            // 
+            // _nodeTree
+            // 
+            this._nodeTree.AllowDrop = true;
+            this._nodeTree.ContextMenuStrip = this.contextMenuStrip1;
+            this._nodeTree.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._nodeTree.ImageIndex = 0;
+            this._nodeTree.ImageList = this.imageList1;
+            this._nodeTree.ItemHeight = 18;
+            this._nodeTree.Location = new System.Drawing.Point(0, 0);
+            this._nodeTree.Margin = new System.Windows.Forms.Padding(0);
+            this._nodeTree.Name = "_nodeTree";
+            this._nodeTree.SelectedImageIndex = 0;
+            this._nodeTree.SelectedNodes = ((System.Collections.Generic.List<System.Windows.Forms.TreeNode>)(resources.GetObject("_nodeTree.SelectedNodes")));
+            this._nodeTree.ShowLines = false;
+            this._nodeTree.Size = new System.Drawing.Size(619, 341);
+            this._nodeTree.TabIndex = 0;
             // 
             // MainForm
             // 
             this.AllowDrop = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(619, 423);
-            this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this._nodeTree);
-            this.Controls.Add(this.menuStrip1);
+            this.ClientSize = new System.Drawing.Size(619, 390);
+            this.Controls.Add(this.toolStripContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
-            this.Text = "NBTExplorer";
+            this.Text = "T@GGY - NBT 編輯工具";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
+            this.toolStripContainer1.ContentPanel.ResumeLayout(false);
+            this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
+            this.toolStripContainer1.TopToolStripPanel.PerformLayout();
+            this.toolStripContainer1.ResumeLayout(false);
+            this.toolStripContainer1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -678,9 +770,8 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private NBTExplorer.Vendor.MultiSelectTreeView.MultiSelectTreeView _nodeTree;
+        private Taggy.Vendor.MultiSelectTreeView.MultiSelectTreeView _nodeTree;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton _buttonOpen;
         private System.Windows.Forms.ToolStripButton _buttonSave;
@@ -707,8 +798,6 @@
         private System.Windows.Forms.ToolStripMenuItem _menuItemSave;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem _menuItemExit;
-        private System.Windows.Forms.ToolStripMenuItem _menuItemFind;
-        private System.Windows.Forms.ToolStripMenuItem _menuItemFindNext;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripButton _buttonFindNext;
         private System.Windows.Forms.ToolStripButton _buttonOpenFolder;
@@ -727,6 +816,13 @@
         private System.Windows.Forms.ToolStripMenuItem _menuItemRename;
         private System.Windows.Forms.ToolStripMenuItem _menuItemEditValue;
         private System.Windows.Forms.ToolStripMenuItem _menuItemDelete;
+        private System.Windows.Forms.ToolStripMenuItem _menuItemCut2;
+        private System.Windows.Forms.ToolStripMenuItem _menuItemCopy2;
+        private System.Windows.Forms.ToolStripMenuItem _menuItemPaste2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7_2;
+        private System.Windows.Forms.ToolStripMenuItem _menuItemRename2;
+        private System.Windows.Forms.ToolStripMenuItem _menuItemEditValue2;
+        private System.Windows.Forms.ToolStripMenuItem _menuItemDelete2;
         private System.Windows.Forms.ToolStripButton _buttonCut;
         private System.Windows.Forms.ToolStripButton _buttonCopy;
         private System.Windows.Forms.ToolStripButton _buttonPaste;
@@ -738,6 +834,10 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         private System.Windows.Forms.ToolStripButton _buttonRefresh;
         private System.Windows.Forms.ToolStripMenuItem _menuItemRefresh;
+        private System.Windows.Forms.ToolStripContainer toolStripContainer1;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem _menuItemFind;
+        private System.Windows.Forms.ToolStripMenuItem _menuItemFindNext;
     }
 }
 

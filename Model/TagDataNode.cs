@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Substrate.Nbt;
 
-namespace NBTExplorer.Model
+namespace Taggy.Model
 {
     public abstract class TagDataNode : DataNode
     {
@@ -68,7 +68,7 @@ namespace NBTExplorer.Model
 
             public override string NodeDisplay
             {
-                get { return NodeDisplayPrefix + TagCount + ((TagCount == 1) ? " entry" : " entries"); }
+                get { return NodeDisplayPrefix + TagCount + " 個項目"; }
             }
         }
 

@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Collections.Generic;
 
-namespace NBTExplorer.Model
+namespace Taggy.Model
 {
     public class DirectoryDataNode : DataNode
     {
