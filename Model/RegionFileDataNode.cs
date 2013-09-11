@@ -83,5 +83,12 @@ namespace Taggy.Model
 
             return true;
         }
+        
+        
+        
+        public override string toJSON () {
+          
+          return "";
+        }
     }
 }

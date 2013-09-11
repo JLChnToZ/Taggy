@@ -45,6 +45,7 @@
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._menuItemCut = new System.Windows.Forms.ToolStripMenuItem();
             this._menuItemCopy = new System.Windows.Forms.ToolStripMenuItem();
+            this._menuItemCopyJSON = new System.Windows.Forms.ToolStripMenuItem();
             this._menuItemPaste = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this._menuItemRename = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,6 +58,7 @@
             this._menuItemAbout = new System.Windows.Forms.ToolStripMenuItem();
             this._menuItemCut2 = new System.Windows.Forms.ToolStripMenuItem();
             this._menuItemCopy2 = new System.Windows.Forms.ToolStripMenuItem();
+            this._menuItemCopyJSON2 = new System.Windows.Forms.ToolStripMenuItem();
             this._menuItemPaste2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator7_2 = new System.Windows.Forms.ToolStripSeparator();
             this._menuItemRename2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -219,6 +221,7 @@
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._menuItemCut,
             this._menuItemCopy,
+            this._menuItemCopyJSON,
             this._menuItemPaste,
             this.toolStripSeparator7,
             this._menuItemRename,
@@ -246,6 +249,14 @@
             this._menuItemCopy.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
             this._menuItemCopy.Size = new System.Drawing.Size(187, 22);
             this._menuItemCopy.Text = "複製 (&C)";
+            // 
+            // _menuItemCopyJSON
+            // 
+            this._menuItemCopyJSON.Image = ((System.Drawing.Image)(resources.GetObject("_menuItemCopy.Image")));
+            this._menuItemCopyJSON.Name = "_menuItemCopyJSON";
+            this._menuItemCopyJSON.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.C)));
+            this._menuItemCopyJSON.Size = new System.Drawing.Size(187, 22);
+            this._menuItemCopyJSON.Text = "複製 &JSON";
             // 
             // _menuItemPaste
             // 
@@ -336,6 +347,14 @@
             this._menuItemCopy2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
             this._menuItemCopy2.Size = new System.Drawing.Size(187, 22);
             this._menuItemCopy2.Text = "複製 (&C)";
+            // 
+            // _menuItemCopyJSON2
+            // 
+            this._menuItemCopyJSON2.Image = ((System.Drawing.Image)(resources.GetObject("_menuItemCopy.Image")));
+            this._menuItemCopyJSON2.Name = "_menuItemCopyJSON2";
+            this._menuItemCopyJSON2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.C)));
+            this._menuItemCopyJSON2.Size = new System.Drawing.Size(187, 22);
+            this._menuItemCopyJSON2.Text = "複製 &JSON";
             // 
             // _menuItemPaste2
             // 
@@ -691,6 +710,7 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._menuItemCut2,
             this._menuItemCopy2,
+            this._menuItemCopyJSON2,
             this._menuItemPaste2,
             this.toolStripSeparator7_2,
             this._menuItemRename2,
@@ -811,6 +831,7 @@
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem _menuItemCut;
         private System.Windows.Forms.ToolStripMenuItem _menuItemCopy;
+        private System.Windows.Forms.ToolStripMenuItem _menuItemCopyJSON;
         private System.Windows.Forms.ToolStripMenuItem _menuItemPaste;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripMenuItem _menuItemRename;
@@ -818,6 +839,7 @@
         private System.Windows.Forms.ToolStripMenuItem _menuItemDelete;
         private System.Windows.Forms.ToolStripMenuItem _menuItemCut2;
         private System.Windows.Forms.ToolStripMenuItem _menuItemCopy2;
+        private System.Windows.Forms.ToolStripMenuItem _menuItemCopyJSON2;
         private System.Windows.Forms.ToolStripMenuItem _menuItemPaste2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7_2;
         private System.Windows.Forms.ToolStripMenuItem _menuItemRename2;

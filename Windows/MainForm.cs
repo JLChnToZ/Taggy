@@ -83,12 +83,14 @@ namespace Taggy.Windows {
             _menuItemRename.Click += _menuItemRename_Click;
             _menuItemDelete.Click += _menuItemDelete_Click;
             _menuItemCopy.Click += _menuItemCopy_Click;
+            _menuItemCopyJSON.Click += _menuItemCopyJSON_Click;
             _menuItemCut.Click += _menuItemCut_Click;
             _menuItemPaste.Click += _menuItemPaste_Click;
             _menuItemEditValue2.Click += _menuItemEditValue_Click;
             _menuItemRename2.Click += _menuItemRename_Click;
             _menuItemDelete2.Click += _menuItemDelete_Click;
             _menuItemCopy2.Click += _menuItemCopy_Click;
+            _menuItemCopyJSON2.Click += _menuItemCopyJSON_Click;
             _menuItemCut2.Click += _menuItemCut_Click;
             _menuItemPaste2.Click += _menuItemPaste_Click;
             _menuItemFind.Click += _menuItemFind_Click;
@@ -696,6 +698,16 @@ namespace Taggy.Windows {
 
             dataNode.CopyNode();
         }
+        
+        private void CopyAsJSON(TreeNode node) {
+            if(node == null || !(node.Tag is DataNode))
+                return;
+
+            DataNode dataNode = node.Tag as DataNode;
+            string JSONStr = dataNode.toJSON();
+            if(JSONStr.Length>0)
+              Clipboard.SetText(JSONStr);
+        }
 
         private void CutNode(TreeNode node) {
             if(node == null || !(node.Tag is DataNode))
@@ -999,10 +1011,12 @@ namespace Taggy.Windows {
 
             _menuItemSave.Enabled = _buttonSave.Enabled;
             _menuItemCopy.Enabled = node.CanCopyNode && NbtClipboardController.IsInitialized;
+            _menuItemCopyJSON.Enabled = true;
             _menuItemCut.Enabled = node.CanCutNode && NbtClipboardController.IsInitialized;
             _menuItemDelete.Enabled = node.CanDeleteNode;
             _menuItemEditValue.Enabled = node.CanEditNode;
             _menuItemCopy2.Enabled = node.CanCopyNode && NbtClipboardController.IsInitialized;
+            _menuItemCopyJSON2.Enabled = true;
             _menuItemCut2.Enabled = node.CanCutNode && NbtClipboardController.IsInitialized;
             _menuItemDelete2.Enabled = node.CanDeleteNode;
             _menuItemEditValue2.Enabled = node.CanEditNode;
@@ -1050,12 +1064,14 @@ namespace Taggy.Windows {
             _menuItemDelete.Enabled = _buttonDelete.Enabled;
             _menuItemCut.Enabled = _buttonCut.Enabled;
             _menuItemCopy.Enabled = _buttonCopy.Enabled;
+            _menuItemCopyJSON.Enabled = nodes.Count == 1;
             _menuItemPaste.Enabled = _buttonPaste.Enabled;
             _menuItemRename2.Enabled = _buttonRename.Enabled;
             _menuItemEditValue2.Enabled = _buttonEdit.Enabled;
             _menuItemDelete2.Enabled = _buttonDelete.Enabled;
             _menuItemCut2.Enabled = _buttonCut.Enabled;
             _menuItemCopy2.Enabled = _buttonCopy.Enabled;
+            _menuItemCopyJSON2.Enabled = nodes.Count == 1;
             _menuItemPaste2.Enabled = _buttonPaste.Enabled;
             _menuItemFind.Enabled = CanOperateOnNodes(nodes, SearchNodePred);
             _menuItemRefresh.Enabled = _buttonRefresh.Enabled;
@@ -1302,6 +1318,10 @@ namespace Taggy.Windows {
 
         private void _menuItemCopy_Click(object sender, EventArgs e) {
             CopyNode(_nodeTree.SelectedNode);
+        }
+
+        private void _menuItemCopyJSON_Click(object sender, EventArgs e) {
+            CopyAsJSON(_nodeTree.SelectedNode);
         }
 
         private void _menuItemCut_Click(object sender, EventArgs e) {

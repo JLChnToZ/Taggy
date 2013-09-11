@@ -281,6 +281,11 @@ namespace Taggy.Model
 
             return false;
         }
+        
+        public override string toJSON () {
+          
+          return _tag.toJSON();
+        }
 
         protected bool EditScalarValue (TagNode tag)
         {

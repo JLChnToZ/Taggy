@@ -335,6 +335,20 @@ namespace Taggy.Model
         {
             return false;
         }
+        
+        public virtual string toJSON ()
+        {
+            if(_children.Count < 1)
+              ExpandCore();
+            string ret = "";
+            foreach(DataNode _child in _children) {
+              if(ret != "" && !ret.EndsWith(","))
+                ret += ",";
+              ret += _child.NodeName + ":" + _child.toJSON();
+            }
+          return ret;
+        }
+          
 
         #endregion
     }

@@ -100,5 +100,11 @@ namespace Taggy.Model
         {
             return _container.DeleteTag(tag);
         }
+        
+        public override string toJSON () {
+          if(_tree == null)
+            ExpandCore();
+          return _tree.Root.toJSON();
+        }
     }
 }
