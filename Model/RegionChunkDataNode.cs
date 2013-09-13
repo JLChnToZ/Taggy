@@ -101,10 +101,12 @@ namespace Taggy.Model
             return _container.DeleteTag(tag);
         }
         
-        public override string toJSON () {
+        internal override System.Text.StringBuilder toJSON(System.Text.StringBuilder Builder) {
+          if(Builder == null)
+            Builder = new System.Text.StringBuilder();
           if(_tree == null)
             ExpandCore();
-          return _tree.Root.toJSON();
+          return Builder.Append(_tree.Root.toJSON());
         }
     }
 }

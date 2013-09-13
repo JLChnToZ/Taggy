@@ -336,17 +336,28 @@ namespace Taggy.Model
             return false;
         }
         
-        public virtual string toJSON ()
+        public string toJSON ()
         {
-            if(_children.Count < 1)
-              ExpandCore();
-            string ret = "";
-            foreach(DataNode _child in _children) {
-              if(ret != "" && !ret.EndsWith(","))
-                ret += ",";
-              ret += _child.NodeName + ":" + _child.toJSON();
-            }
-          return ret;
+          return toJSON(null).ToString();
+        }
+        
+        internal virtual System.Text.StringBuilder toJSON(System.Text.StringBuilder Builder) {
+          if(Builder == null)
+            Builder = new System.Text.StringBuilder();
+          if(_children.Count < 1)
+            ExpandCore();
+          Builder.Append("{");
+          bool isFirst = true;
+          foreach(DataNode _child in _children) {
+            if(!isFirst)
+              Builder.Append(",");
+            else
+              isFirst = false;
+            Builder.Append(_child.NodeName).Append(":");
+            _child.toJSON(Builder);
+          }
+          Builder.Append("}");
+          return Builder;
         }
           
 

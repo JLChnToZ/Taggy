@@ -86,9 +86,10 @@ namespace Taggy.Model
         
         
         
-        public override string toJSON () {
-          
-          return "";
+        internal override System.Text.StringBuilder toJSON(System.Text.StringBuilder Builder) {
+          if(Builder == null)
+            Builder = new System.Text.StringBuilder();
+          return Builder;
         }
     }
 }

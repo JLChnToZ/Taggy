@@ -282,9 +282,10 @@ namespace Taggy.Model
             return false;
         }
         
-        public override string toJSON () {
-          
-          return _tag.toJSON();
+        internal override System.Text.StringBuilder toJSON(System.Text.StringBuilder Builder) {
+          if(Builder == null)
+            Builder = new System.Text.StringBuilder();
+          return Builder.Append(_tag.toJSON());
         }
 
         protected bool EditScalarValue (TagNode tag)
